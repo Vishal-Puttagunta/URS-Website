@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OSUxURS - Undergraduate Research Society</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  
   <style>
     :root {
       --scarlet: #BB0000;
@@ -81,51 +82,55 @@ header h1 {
     }
 
     .hero {
-  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.35)), 
-              url('thomp.png') center/cover no-repeat;
-  color: var(--black);
-  text-align: center;
-  padding: 6rem 1rem 3rem 1rem; /* Reduced padding */
-  position: relative;
-}
+      background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5)), 
+                  url('thomp.png') center/cover no-repeat;  /* Made overlay slightly more opaque */
+      color: var(--black);
+      text-align: center;
+      padding: 6rem 1rem 3rem 1rem;
+      position: relative;
+    }
 
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;  /* Added gap between text and image */
+    }
 
-.hero-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
+    .hero-text {
+      background-color: rgba(255, 255, 255, 0.3);  /* Moved background to text container */
+      border-radius: 70px;
+      padding: 2rem;
+      backdrop-filter: blur(5px);
+      flex: 1;  /* Allow text container to take available space */
+    }
+
+    .hero-image {
+      flex: 0 0 auto;  /* Prevent image container from growing or shrinking */
+    }
 
     .hero h2 {
       font-family: 'Poppins', sans-serif;
-      font-size: 2rem;
-      color: var(--black);
-      font-weight: bold;  /* Added bold */
-      text-shadow: -1px -1px 0 var(--light-gray),  
-                   1px -1px 0 var(--light-gray),
-                   -1px 1px 0 var(--light-gray),
-                   1px 1px 0 var(--light-gray);  /* Added gray outline */
+      font-size: 2.5rem;
+      color: var(--scarlet);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      margin-bottom: 0.5rem;
     }
 
     .hero p {
       margin-top: 1rem;
-      font-size: 1.6rem;
-      color: var(--black);
-      font-weight: bold;  /* Added bold */
-      text-shadow: -0.7px -0.7px 0 var(--light-gray),  
-      0.7px -0.7px 0 var(--light-gray),
-                   -0.7px 0.7px 0 var(--light-gray),
-                   0.7px 0.7px 0 var(--light-gray);  /* Added gray outline */
+      font-size: 1.4rem;
+      color: #333333;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      line-height: 1.4;
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
     }
 
-    .hero-image img {
-  max-width: 300px;
-  width: 100%;
-  height: auto;
-}
 
 
     footer {
