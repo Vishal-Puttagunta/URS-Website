@@ -11,6 +11,7 @@
       --gray: #666666;
       --black: #000;
       --white: #fff;
+      --light-gray: #d8d6d6;
     }
 
     * {
@@ -21,7 +22,7 @@
     }
 
     body {
-      background-color: var(--white);
+      background-color: var(--light-gray);
       color: var(--black);
       line-height: 1.6;
     }
@@ -49,6 +50,16 @@ header h1 {
                1px 1px 0 var(--scarlet);
 }
 
+    footer {
+      background: var(--off-white);  /* Changed from var(--gray) to match the new theme */
+      color: var(--gray);  /* Changed from white to gray for better readability */
+      text-align: center;
+      padding: 2rem;  /* Increased padding */
+      margin-top: 2rem;  /* Added margin top */
+      border-top: 1px solid #ddd;  /* Added subtle border */
+      font-size: 0.9rem;  /* Made text slightly smaller */
+    }
+
 
     nav a {
       color: var(--white);
@@ -70,7 +81,7 @@ header h1 {
     }
 
     .hero {
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.7)), 
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.35)), 
               url('thomp.png') center/cover no-repeat;
   color: var(--black);
   text-align: center;
@@ -89,17 +100,27 @@ header h1 {
 }
 
     .hero h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2rem; /* Reduced from 2.5rem */
-  color: var(--black);
-}
-
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      color: var(--black);
+      font-weight: bold;  /* Added bold */
+      text-shadow: -1px -1px 0 var(--light-gray),  
+                   1px -1px 0 var(--light-gray),
+                   -1px 1px 0 var(--light-gray),
+                   1px 1px 0 var(--light-gray);  /* Added gray outline */
+    }
 
     .hero p {
       margin-top: 1rem;
-      font-size: 1.2rem;
+      font-size: 1.6rem;
       color: var(--black);
+      font-weight: bold;  /* Added bold */
+      text-shadow: -0.7px -0.7px 0 var(--light-gray),  
+      0.7px -0.7px 0 var(--light-gray),
+                   -0.7px 0.7px 0 var(--light-gray),
+                   0.7px 0.7px 0 var(--light-gray);  /* Added gray outline */
     }
+
     .hero-image img {
   max-width: 300px;
   width: 100%;
@@ -127,17 +148,50 @@ header h1 {
       width: 100%;
       height: 600px;
     }
-
     #about {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  font-family: 'Times New Roman', Times, serif !important;
+      text-align: center;
+      max-width: 1200px;  /* Increased from 800px */
+      margin: 0 auto;
+      font-family: 'Times New Roman', Times, serif !important;
+    }
+
+    .about-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;  /* Changed from center to better align content */
+      max-width: 1200px;  /* Increased from 1000px */
+      margin: 0 auto;
+      padding: 2rem 2rem;  /* Increased horizontal padding */
+      flex-wrap: wrap;
+      gap: 3rem;  /* Added gap between sections */
+    }
+
+    .about-left {
+      flex: 0 1 350px;  /* Fixed width for left section */
+      text-align: center;
+      padding: 1rem;
+    }
+
+.about-left img {
+  max-width: 150px;  /* Changed from 200px */
+  width: 60%;  /* Added width percentage */
+  height: auto;
 }
-#about p {
-  font-family: 'Times New Roman', Times, serif !important;
-  font-size: 1.2rem;
-}
+// ... existing code ...
+
+    .about-right {
+      flex: 0 1 700px;  /* Increased width for right section */
+      text-align: left;
+      padding: 1rem;
+      font-family: 'Times New Roman', Times, serif !important;
+    }
+
+    .about-right p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 650px;  /* Added to control line length for better readability */
+    }
+
 
 
 
@@ -169,15 +223,33 @@ header h1 {
     
   </section>
 
+
   <section id="about">
-    <h2>Who We Are</h2>
-    <p>The Undergraduate Research Society (URS) is a cross‑disciplinary student organization at The Ohio State University whose purpose is to develop undergraduates into research professionals. We provide structured resources, mentorship, and a collaborative community to guide students at all stages of their research journey, in initiating, executing, and presenting rigorous scholarly and creative work.</p>
+    <div class="about-container">
+      <div class="about-left">
+        <h3>
+          <strong><em>Undergraduate Research Society</em></strong><br>
+          <strong><em>The Ohio State University</em></strong>
+        </h3>
+        <img src="osuo.png" alt="OSU Logo" />
+      </div>
+      <div class="about-right">
+        <h2>Who We Are</h2>
+        <p>
+          The Undergraduate Research Society (URS) is a cross‑disciplinary student organization at The Ohio State University whose purpose is to develop undergraduates into research professionals. We provide structured resources, mentorship, and a collaborative community to guide students at all stages of their research journey, in initiating, executing, and presenting rigorous scholarly and creative work.
+        </p>
+      </div>
+    </div>
   </section>
+  
 
   <section id="events">
     <h2>Events</h2>
     <iframe src="https://calendar.google.com/calendar/embed?src=yourcalendarid%40group.calendar.google.com&ctz=America%2FNew_York"></iframe>
   </section>
 
+  <footer>
+    <p>&copy; 2025 Undergraduate Research Society at The Ohio State University. All rights reserved.</p>
+  </footer>
 </body>
 </html>
